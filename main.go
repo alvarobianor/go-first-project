@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
+	"myFirstProject/utils"
 )
 
 func main() {
-	fmt.Println("My favorite number is", rand.Float64())
+	fmt.Println("My favorite number is", utils.GetRandomNumberAlv())
 }
