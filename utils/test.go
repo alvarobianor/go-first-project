@@ -17,8 +17,10 @@ func generateNumber() float64 {
 
 // A function so funny that can print anything
 func PrintAnything(params ...any) []any {
-	for _, param := range params {
-		fmt.Println(param)
+	for index, param := range params {
+        
+		fmt.Println("value ->",param)
+		fmt.Println("index ->",index)
 	}
 
 	return params
