@@ -19,4 +19,6 @@ func main() {
 	fmt.Println("a test -> ", highOrder.Somar(idade)(44))
 	fmt.Println("Print All things", nome)
 	u.PrintAnything(seiLa, seiLa2, nome, idade, paralelepiledo, CONSTANTE)
+
+	fmt.Println("ConvertInString -> ȹ (", u.ConvertInString(446), ")")
 }
