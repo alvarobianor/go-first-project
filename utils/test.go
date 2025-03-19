@@ -31,3 +31,10 @@ func ConvertInString(value int) string {
 
 	return vale
 }
+
+func TakeInt8(value int8) int8 {
+	return value
+}
+func TakeInt16(value int16) int16 {
+	return value
+}

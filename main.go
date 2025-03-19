@@ -21,4 +21,7 @@ func main() {
 	u.PrintAnything(seiLa, seiLa2, nome, idade, paralelepiledo, CONSTANTE)
 
 	fmt.Println("ConvertInString -> ȹ (", u.ConvertInString(10084), ")")
+	const integer = 10
+	fmt.Println("TakeInt8 -> ȹ (", u.TakeInt8(integer), ")")
+	fmt.Println("TakeInt16 -> ȹ (", u.TakeInt16(integer), ")")
 }
