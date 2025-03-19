@@ -20,5 +20,5 @@ func main() {
 	fmt.Println("Print All things", nome)
 	u.PrintAnything(seiLa, seiLa2, nome, idade, paralelepiledo, CONSTANTE)
 
-	fmt.Println("ConvertInString -> ȹ (", u.ConvertInString(446), ")")
+	fmt.Println("ConvertInString -> ȹ (", u.ConvertInString(10084), ")")
 }
