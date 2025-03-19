@@ -7,8 +7,16 @@ import (
 )
 
 func main() {
-	fmt.Println("My favorite number is", u.GetRandomNumberAlv())
-	fmt.Println("a test -> ", highOrder.Somar(2)(44))
-	// fmt.Println("Print All things", u.PrintAnything(1, 3, 4,5, 6,64, 32,3 ,1, "as", '1', 20.4))
-}
 
+	var idade, nome = 26, "Álvaro Bianor"
+	const CONSTANTE = "ALVIM REI"
+	var (
+		seiLa          int    = 5
+		seiLa2         string = "ALVIM REI"
+		paralelepiledo []int  = []int{1, 2, 3, 4, 5}
+	)
+	fmt.Println("My favorite number is", u.GetRandomNumberAlv())
+	fmt.Println("a test -> ", highOrder.Somar(idade)(44))
+	fmt.Println("Print All things", nome)
+	u.PrintAnything(seiLa, seiLa2, nome, idade, paralelepiledo, CONSTANTE)
+}
