@@ -38,3 +38,7 @@ func TakeInt8(value int8) int8 {
 func TakeInt16(value int16) int16 {
 	return value
 }
+
+func ConstantArray() []int {
+	return []int{1, 2, 3, 4, 5}
+}
