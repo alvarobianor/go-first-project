@@ -3,6 +3,7 @@ package utils
 import (
 	"fmt"
 	"math/rand"
+	furia "myFirstProject/utils/internal"
 )
 
 // GetRandomNumber retorna um número aleatório
@@ -41,4 +42,8 @@ func TakeInt16(value int16) int16 {
 
 func ConstantArray() []int {
 	return []int{1, 2, 3, 4, 5}
+}
+
+func PrintFuria() string {
+	return furia.PrintFuria()
 }

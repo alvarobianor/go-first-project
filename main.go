@@ -26,4 +26,5 @@ func main() {
 	fmt.Println("TakeInt8 -> ȹ (", u.TakeInt8(integer), ")")
 	fmt.Println("TakeInt16 -> ȹ (", u.TakeInt16(integer), ")")
 	fmt.Println("ConstantArray -> ȹ (", u.ConstantArray(), ")")
+	fmt.Println(u.PrintFuria())
 }
