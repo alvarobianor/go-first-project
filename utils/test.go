@@ -47,3 +47,7 @@ func ConstantArray() []int {
 func PrintFuria() string {
 	return furia.PrintFuria()
 }
+
+func DividirCSGO(a int, b int) (value int, rest int) {
+	return furia.DividirCSGO(a, b)
+}

@@ -27,4 +27,5 @@ func main() {
 	fmt.Println("TakeInt16 -> ȹ (", u.TakeInt16(integer), ")")
 	fmt.Println("ConstantArray -> ȹ (", u.ConstantArray(), ")")
 	fmt.Println(u.PrintFuria())
+	fmt.Println(u.DividirCSGO(131, 3))
 }
