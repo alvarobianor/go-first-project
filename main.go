@@ -37,4 +37,6 @@ func main() {
 	u.Conditional(3)
 
 	u.WhatTypeIsThis('k')
+	numbersOfDefers := u.DoDefer()
+	fmt.Println("Number of defers ->", numbersOfDefers)
 }
