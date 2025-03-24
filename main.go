@@ -31,4 +31,6 @@ func main() {
 	fmt.Println(highOrder.ConvertIntInString(1038))
 
 	u.CreateForOld(4)
+
+	fmt.Println("ForWithRange -> Its a Sum(", u.ForWithRange([]uint8{1, 2, 3, 4, 29}), ")")
 }
