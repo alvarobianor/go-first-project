@@ -39,4 +39,5 @@ func main() {
 	u.WhatTypeIsThis('k')
 	numbersOfDefers := u.DoDefer()
 	fmt.Println("Number of defers ->", numbersOfDefers)
+	u.UndestandingDefers(80)
 }

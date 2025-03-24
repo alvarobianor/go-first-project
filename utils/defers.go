@@ -10,3 +10,12 @@ func DoDefer() int {
 	defer fmt.Println("This is the fifth defer, but will be the first")
 	return 5
 }
+
+func UndestandingDefers(value uint8) {
+	defer func(y uint8) {
+		fmt.Println("This is the value of y inside the defer->", y)
+	}(value)
+
+	value = value * 2
+	fmt.Println("This is the value of value outide of defer multiply 2x ->", value)
+}
