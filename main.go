@@ -29,4 +29,6 @@ func main() {
 	fmt.Println(u.PrintFuria())
 	fmt.Println(u.DividirCSGO(131, 3))
 	fmt.Println(highOrder.ConvertIntInString(1038))
+
+	u.CreateForOld(4)
 }
