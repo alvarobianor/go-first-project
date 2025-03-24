@@ -31,3 +31,22 @@ func ForWithRange(elements []uint8) uint8 {
 	}
 	return result
 }
+
+func ForInInt() {
+
+	for i := range 100 {
+		fmt.Println(i)
+	}
+
+	for range 2 {
+		fmt.Println("Teste")
+	}
+}
+
+func ForInPointers() {
+	lenght := 10
+
+	for elem := range lenght {
+		fmt.Println(&elem)
+	}
+}
