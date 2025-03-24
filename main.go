@@ -34,4 +34,7 @@ func main() {
 
 	fmt.Println("ForWithRange -> Its a Sum(", u.ForWithRange([]uint8{1, 2, 3, 4, 29}), ")")
 	u.ForInPointers()
+	u.Conditional(3)
+
+	u.WhatTypeIsThis('k')
 }
