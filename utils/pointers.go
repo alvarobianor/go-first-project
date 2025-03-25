@@ -26,6 +26,13 @@ func Swap(a *int, b *int) {
 	*b = aux
 }
 
+func NewSap(a *int, b *int) (int, int) {
+	temp := a
+	a = b
+	b = temp
+	return *a, *b
+}
+
 func ExplainPointers(a *int) {
 	fmt.Println("a is *int, lets see your values -> a, &a, *a", a, &a, *a)
 	temp := &a
@@ -43,7 +50,7 @@ func ExplainPointers(a *int) {
 	fmt.Println("Temp3 -> ", temp3)
 	fmt.Println("Temp3& -> ", &temp3)
 	fmt.Println("Temp3* is invalid-> ")
-}
 
-// a is a memoryadress of some variable, &a is the memoryadress of a, *a is the value of a
-// a, &a, *a (a == 0xc0000100e0) (&a == 0xc000068040) (*a == 10)
+	// a is a memoryadress of some variable, &a is the memoryadress of a, *a is the value of a
+	// a, &a, *a (a == 0xc0000100e0) (&a == 0xc000068040) (*a == 10)
+}

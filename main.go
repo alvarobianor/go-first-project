@@ -40,4 +40,10 @@ func main() {
 	numbersOfDefers := u.DoDefer()
 	fmt.Println("Number of defers ->", numbersOfDefers)
 	u.UndestandingDefers(80)
+
+	a, b := 10, 20
+	fmt.Println("Before Swap -> a, b", a, b)
+	a, b = u.NewSap(&a, &b)
+
+	fmt.Println("After Swap -> a, b", a, b)
 }
