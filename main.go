@@ -46,4 +46,10 @@ func main() {
 	a, b = u.NewSap(&a, &b)
 
 	fmt.Println("After Swap -> a, b", a, b)
+
+	pointValue := 10
+	var pointer *int = nil
+	fmt.Println("Pointer is nil -> ", pointer)
+	pointer = u.CreatePointer(&pointValue, 100)
+	fmt.Println("Pointer is not nil, and his value -> ", pointer, ", ", *pointer)
 }

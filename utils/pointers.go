@@ -54,3 +54,8 @@ func ExplainPointers(a *int) {
 	// a is a memoryadress of some variable, &a is the memoryadress of a, *a is the value of a
 	// a, &a, *a (a == 0xc0000100e0) (&a == 0xc000068040) (*a == 10)
 }
+
+func CreatePointer(pointer *int, value int) *int {
+	*pointer = value
+	return pointer
+}
