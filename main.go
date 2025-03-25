@@ -52,4 +52,5 @@ func main() {
 	fmt.Println("Pointer is nil -> ", pointer)
 	pointer = u.CreatePointer(&pointValue, 100)
 	fmt.Println("Pointer is not nil, and his value -> ", pointer, ", ", *pointer)
+	u.ViewSlices()
 }
