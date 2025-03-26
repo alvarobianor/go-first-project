@@ -53,4 +53,10 @@ func main() {
 	pointer = u.CreatePointer(&pointValue, 100)
 	fmt.Println("Pointer is not nil, and his value -> ", pointer, ", ", *pointer)
 	u.ViewSlices()
+	sli := []int{}
+	u.AddValueInSlice(&sli, 10)
+	u.AddValueInSlice(&sli, 10)
+	u.AddValueInSlice(&sli, 10)
+	u.AddValueInSlice(&sli, 10)
+	fmt.Println("Slice -> ", sli)
 }
