@@ -63,4 +63,23 @@ func main() {
 	newSlice := make([]int, 5, 10)
 	fmt.Println("New Slice ->", newSlice, "Length ->", len(newSlice), "Capacity ->", cap(newSlice))
 
+	mapzim := map[string]int{}
+
+	u.AddRandoNumberInMap(mapzim)
+	fmt.Println("Map ->", mapzim)
+
+	mapGames := make(map[string][][]uint8)
+
+	u.AddGamesInMap(mapGames, "wins", []uint8{1, 2, 3, 4, 5, 6})
+	u.AddGamesInMap(mapGames, "almost5", []uint8{1, 2, 3, 9, 23, 14})
+	u.AddGamesInMap(mapGames, "almost5", []uint8{10, 20, 30, 40, 50, 60})
+	u.AddGamesInMap(mapGames, "almost4", []uint8{11, 22, 33, 44, 55, 66})
+	u.AddGamesInMap(mapGames, "almost4", []uint8{12, 23, 34, 45, 56, 67})
+	u.AddGamesInMap(mapGames, "almost4", []uint8{13, 24, 35, 46, 57, 68})
+
+	fmt.Println("Map Games ->", mapGames)
+	fmt.Println("Len of Almost4", len(mapGames["almost4"]))
+	fmt.Println("Len of Almost5", len(mapGames["almost5"]))
+	fmt.Println("Len of Wins", len(mapGames["wins"]))
+
 }
