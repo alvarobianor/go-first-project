@@ -60,4 +60,7 @@ func main() {
 	u.AddValueInSlice(&sli, 10)
 	fmt.Println("Slice -> ", sli)
 
+	newSlice := make([]int, 5, 10)
+	fmt.Println("New Slice ->", newSlice, "Length ->", len(newSlice), "Capacity ->", cap(newSlice))
+
 }
