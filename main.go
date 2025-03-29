@@ -82,5 +82,7 @@ func main() {
 	fmt.Println("Len of Almost5", len(mapGames["almost5"]))
 	fmt.Println("Len of Wins", len(mapGames["wins"]))
 
-	fmt.Println("CalculateHowMonthsToMoney -> ", highOrder.CalculateHowTheTaxForMoney(1000, 1500, 5))
+	fmt.Println("CalculateHowTheTaxForMoney -> ", highOrder.CalculateHowTheTaxForMoney(700, 1000, 24))
+	fmt.Println("CalculateHowMonthsToMoney -> ", highOrder.CalculateHowMonthsToMoney(700, 0.8, 1000))
+	highOrder.CalculateInvestments(700000, 1000000, 0.8)
 }
