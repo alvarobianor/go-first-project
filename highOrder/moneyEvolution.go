@@ -29,7 +29,6 @@ func CalculateHowTheTaxForMoney(currentMoney float64, target float64, months int
 
 func CalculateInvestments(money float64, target float64, rate float64) {
 
-	fmt.Println("\n\n---- CalculateInvestments ----")
 	fmt.Println("\nLet's start with the money: ", money, " and the target: ", int64(target))
 	fmt.Println("The rate is: ", rate, "%")
 	initialMoney := money
@@ -71,6 +70,8 @@ func CalculateInvestments(money float64, target float64, rate float64) {
 
 	if month == 1 {
 		time = "1 " + formattedSuffixYear
+	} else if monthInYears == 0 {
+		time = fmt.Sprintf("%d ", month) + formattedSuffixMonth
 	} else if monthInYears == 1 && monthsRestingInTheYear == 0 {
 		time = fmt.Sprintf("%d ", monthInYears) + formattedSuffixYear
 	} else if monthInYears == 1 && monthsRestingInTheYear != 0 {
@@ -84,6 +85,15 @@ func CalculateInvestments(money float64, target float64, rate float64) {
 	formattedRate := fmt.Sprintf("%.2f%%", rate)
 
 	fmt.Println("\n\n---- Resume ----")
-	fmt.Println("\nIn", time, "we can grow the money from R$", initialMoney, "to R$", int64(money), "with a rate of", strings.Replace(formattedRate, ".", ",", 1), "per month")
+
+	initialMoneyString := fmt.Sprintf("R$%.2f", initialMoney)
+	initialMoneyString = strings.Replace(initialMoneyString, ".", ",", 1)
+
+	targetMoneyString := fmt.Sprintf("R$%.2f", money)
+	targetMoneyString = strings.Replace(targetMoneyString, ".", ",", 1)
+
+	formattedRate = strings.Replace(formattedRate, ".", ",", 1)
+
+	fmt.Println("\nIn", time, "we can grow the money from:", initialMoneyString, "to:", targetMoneyString, "with a rate of:", formattedRate, "per month")
 
 }
