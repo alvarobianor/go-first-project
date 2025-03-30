@@ -85,4 +85,7 @@ func main() {
 	fmt.Println("CalculateHowTheTaxForMoney -> ", highOrder.CalculateHowTheTaxForMoney(700, 1000, 24))
 	fmt.Println("CalculateHowMonthsToMoney -> ", highOrder.CalculateHowMonthsToMoney(700, 0.8, 1000))
 
+	sliceCreated, capacite := u.CreateSlice()
+	fmt.Println("Comeback to slices -> ", sliceCreated, capacite)
+
 }
