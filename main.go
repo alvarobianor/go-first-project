@@ -88,4 +88,13 @@ func main() {
 	sliceCreated, capacite := u.CreateSlice()
 	fmt.Println("Comeback to slices -> ", sliceCreated, capacite)
 
+	student := u.CreateStudent("Álvaro", 26, "CC")
+
+	fmt.Println("Student -> ", student)
+
+	student.ChangeName("Álvaro Bianor")
+	fmt.Println("Student -> ", student)
+	student.MyBirthday()
+	fmt.Println("Student after use a method of Person-> ", student)
+
 }
