@@ -98,4 +98,9 @@ func main() {
 	fmt.Println("Student after use a method of Person-> ", student)
 
 	u.DemonstrateAnimal()
+
+}
+
+func Animal(a u.Animal) {
+	a.Speak()
 }
