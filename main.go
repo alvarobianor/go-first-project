@@ -109,6 +109,14 @@ func main() {
 		fmt.Println("Result -> ", result)
 	}
 
+	user, err := u.CreateUserAlvim("Álvaro Bianor", 26)
+
+	if err != nil {
+		fmt.Println("Error -> ", err)
+	} else {
+		user.ItsMe()
+	}
+
 }
 
 func Animal(a u.Animal) {
