@@ -99,6 +99,16 @@ func main() {
 
 	u.DemonstrateAnimal()
 
+	numerator, denominator := 10, 4
+
+	result, err := u.Divider(float64(numerator), float64(denominator))
+
+	if err != nil {
+		fmt.Println("Error -> ", err)
+	} else {
+		fmt.Println("Result -> ", result)
+	}
+
 }
 
 func Animal(a u.Animal) {
