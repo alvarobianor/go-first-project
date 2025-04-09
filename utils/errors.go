@@ -40,20 +40,41 @@ func CreateUserAlvim(name string, age int) (*UserAlvim, error) {
 }
 
 type ErrorAlvim struct {
-	msg string
+	Msg string
 }
-type Error interface {
+type ErrorCustomByMe interface {
 	Error() string
 } // not used
 
 func (e ErrorAlvim) Error() string {
-	return e.msg
+	return e.Msg
 }
 
 func SquareRoot(x float64) (float64, error) {
 	if x < 0 {
-		return 0, ErrorAlvim{msg: "x is less than 0"}
+		return 0, ErrorAlvim{Msg: "x is less than 0"}
 	}
 
 	return math.Sqrt(x), nil
+}
+
+var ErrNotFound = errors.New("não encontrado")
+
+// Example function showing how to use ErrNotFound
+func HandleNotFoundError(err error) {
+	if errors.Is(err, ErrNotFound) {
+		// Handle the specific error
+		fmt.Println(err.Error())
+	} else {
+		fmt.Println("Error is different from ErrNotFound")
+	}
+}
+
+// Example function showing how to handle a custom error
+func HandleCustomError(err error) {
+	var customErr ErrorAlvim
+	if errors.As(err, &customErr) {
+		// the custom now it get the value from err
+		fmt.Println(customErr.Msg, err.Error())
+	}
 }

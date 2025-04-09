@@ -125,6 +125,13 @@ func main() {
 		fmt.Println("Square Root -> ", squareRoot)
 	}
 
+	errorAlvim := u.ErrorAlvim{Msg: "x is less than 0 by errorAlvim"}
+
+	u.HandleNotFoundError(errorAlvim)
+	u.HandleNotFoundError(u.ErrNotFound)
+
+	customError := u.ErrorAlvim{Msg: "I'm a custom error."}
+	u.HandleCustomError(customError)
 }
 
 func Animal(a u.Animal) {
