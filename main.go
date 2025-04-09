@@ -132,6 +132,9 @@ func main() {
 
 	customError := u.ErrorAlvim{Msg: "I'm a custom error."}
 	u.HandleCustomError(customError)
+
+	fmt.Println("--------------------------------Wrapped Error--------------------------------")
+	u.HandleWrappedError(u.ErrNotFound)
 }
 
 func Animal(a u.Animal) {

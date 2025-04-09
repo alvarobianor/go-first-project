@@ -81,3 +81,38 @@ func HandleCustomError(err error) {
 		fmt.Println(customErr.Msg, err.Error())
 	}
 }
+
+// Example of error wrapping
+func ProcessData(data string) error {
+	if len(data) == 0 {
+		return fmt.Errorf("process data: %w", errors.New("empty data"))
+	}
+
+	// Simulate another operation that might fail
+	if len(data) > 100 {
+		return fmt.Errorf("process data: %w", &ErrorAlvim{Msg: "data too long"})
+	}
+
+	return nil
+}
+
+// Example function showing how to handle wrapped errors
+func HandleWrappedError(err error) {
+	if err == nil {
+		return
+	}
+
+	// Check if the error contains our custom ErrorAlvim
+	var customErr ErrorAlvim
+	if errors.As(err, &customErr) {
+		fmt.Printf("Found wrapped ErrorAlvim: %v\n", customErr.Msg)
+	}
+
+	// Check if the error contains a specific error message
+	if errors.Is(err, ErrNotFound) {
+		fmt.Println("Found empty data error")
+	}
+
+	// Print the full error chain
+	fmt.Printf("Full error: %v\n", err)
+}
