@@ -58,6 +58,9 @@ func SquareRoot(x float64) (float64, error) {
 	return math.Sqrt(x), nil
 }
 
+// errors.Is: Use quando quiser comparar com um erro específico
+// errors.As: Use quando quiser verificar se o erro é de um tipo específico e acessar seus métodos/campos
+
 var ErrNotFound = errors.New("não encontrado")
 
 // Example function showing how to use ErrNotFound
