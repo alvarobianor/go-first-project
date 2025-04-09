@@ -3,6 +3,7 @@ package utils
 import (
 	"errors"
 	"fmt"
+	"math"
 )
 
 func Divider(numerator float64, denominator float64) (float64, error) {
@@ -36,4 +37,23 @@ func CreateUserAlvim(name string, age int) (*UserAlvim, error) {
 	}
 
 	return &UserAlvim{Name: name, Age: age}, nil
+}
+
+type ErrorAlvim struct {
+	msg string
+}
+type Error interface {
+	Error() string
+} // not used
+
+func (e ErrorAlvim) Error() string {
+	return e.msg
+}
+
+func SquareRoot(x float64) (float64, error) {
+	if x < 0 {
+		return 0, ErrorAlvim{msg: "x is less than 0"}
+	}
+
+	return math.Sqrt(x), nil
 }

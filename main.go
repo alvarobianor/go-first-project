@@ -117,6 +117,14 @@ func main() {
 		user.ItsMe()
 	}
 
+	squareRoot, err := u.SquareRoot(-2)
+
+	if err != nil {
+		fmt.Println("Error -> ", err)
+	} else {
+		fmt.Println("Square Root -> ", squareRoot)
+	}
+
 }
 
 func Animal(a u.Animal) {
