@@ -6,8 +6,16 @@ import (
 	"strings"
 )
 
+type MyWriter struct{}
+
+func (w MyWriter) Write(p []byte) (n int, err error) {
+	fmt.Print(string(p))
+	return len(p), nil
+}
+
 func ReadStringAsStrem(str string) {
 	reader := strings.NewReader(str)
+	myWriter := MyWriter{}
 
 	buffer := make([]byte, 2)
 
@@ -19,7 +27,8 @@ func ReadStringAsStrem(str string) {
 			}
 			panic(err)
 		}
-		fmt.Println(buffer[:len])
+		_, _ = myWriter.Write([]byte(buffer[:len]))
+
 	}
 
 }
