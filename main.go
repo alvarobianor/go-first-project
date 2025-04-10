@@ -135,6 +135,8 @@ func main() {
 
 	fmt.Println("--------------------------------Wrapped Error--------------------------------")
 	u.HandleWrappedError(u.ErrNotFound)
+
+	u.ReadStringAsStrem("Alvaro Bianor, lindo e gostoso!")
 }
 
 func Animal(a u.Animal) {
