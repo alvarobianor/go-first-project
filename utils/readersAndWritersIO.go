@@ -1,21 +1,27 @@
 package utils
 
 import (
-	"fmt"
 	"io"
+	"os"
 	"strings"
 )
 
-type MyWriter struct{}
+type MyWriter struct {
+	reader io.Writer
+}
 
-func (w MyWriter) Write(p []byte) (n int, err error) {
-	fmt.Print(string(p))
-	return len(p), nil
+func (w MyWriter) Write(b []byte) (n int, err error) {
+
+	for i, bytes := range b {
+		b[i] = bytes + 10
+	}
+
+	return w.reader.Write(b)
 }
 
 func ReadStringAsStrem(str string) {
 	reader := strings.NewReader(str)
-	myWriter := MyWriter{}
+	myWriter := MyWriter{reader: os.Stdout}
 
 	buffer := make([]byte, 2)
 
