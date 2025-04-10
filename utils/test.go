@@ -6,7 +6,7 @@ import (
 	furia "myFirstProject/utils/internal"
 )
 
-// GetRandomNumber retorna um número aleatório
+// GetRandomNumber returns a random number
 func GetRandomNumberAlv() float64 {
 	return generateNumber()
 }
