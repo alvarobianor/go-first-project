@@ -144,7 +144,7 @@ func (p *Pessoa) Aniversario() {
 
 func ExamplePessoa() {
 	alvaro := Pessoa{
-		Nome:  "Alvaro",
+		Nome:  "Alvaro Bianor",
 		Idade: 20,
 	}
 
