@@ -137,6 +137,10 @@ func main() {
 	u.HandleWrappedError(u.ErrNotFound)
 
 	u.ReadStringAsStrem("Alvaro Bianor, lindo e gostoso!")
+
+	fmt.Println("\n--------------------------------Generics--------------------------------")
+	u.ExampleNumberComparer()
+	u.ExampleStack()
 }
 
 func Animal(a u.Animal) {
