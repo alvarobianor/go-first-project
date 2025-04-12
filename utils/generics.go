@@ -90,10 +90,6 @@ func ExampleStack() {
 
 }
 
-type CustomType interface {
-	int | string
-}
-
 type CustomArrays interface {
 	int | string
 }
