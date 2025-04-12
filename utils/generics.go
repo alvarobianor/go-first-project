@@ -89,3 +89,72 @@ func ExampleStack() {
 	fmt.Println(stack.items)
 
 }
+
+type CustomType interface {
+	int | string
+}
+
+type CustomArrays interface {
+	int | string
+}
+
+type MyType[T CustomArrays] interface {
+	Add(item T)
+	Show()
+	Get() *[]T
+}
+
+type MyStruct[T CustomArrays] struct {
+	Value []T
+}
+
+func (s *MyStruct[T]) Add(item T) {
+	s.Value = append(s.Value, item)
+}
+
+func (s *MyStruct[T]) Show() {
+	fmt.Println(s.Value)
+}
+func (s *MyStruct[T]) Get() *[]T {
+	return &s.Value
+}
+func ExampleMyStruct() {
+	myStruct := MyStruct[int]{Value: []int{1, 2, 3}}
+
+	myStruct.Show()
+
+	value := myStruct.Get()
+
+	*value = append(*value, 4)
+
+	fmt.Println(*value)
+	myStruct.Add(5)
+	myStruct.Show()
+
+}
+
+type Pessoa struct {
+	Nome  string
+	Idade int
+}
+
+func (p Pessoa) Saudacao() string {
+	return fmt.Sprintf("Olá, meu nome é %s", p.Nome)
+}
+
+func (p *Pessoa) Aniversario() {
+	p.Idade++
+}
+
+func ExamplePessoa() {
+	alvaro := Pessoa{
+		Nome:  "Alvaro",
+		Idade: 20,
+	}
+
+	alvaro.Saudacao()
+
+	alvaro.Aniversario()
+
+	fmt.Println(alvaro)
+}
