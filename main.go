@@ -141,6 +141,7 @@ func main() {
 	fmt.Println("\n--------------------------------Generics--------------------------------")
 	u.ExampleNumberComparer()
 	u.ExampleStack()
+	u.ExampleMyStruct()
 }
 
 func Animal(a u.Animal) {
