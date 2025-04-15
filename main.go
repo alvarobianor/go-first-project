@@ -158,8 +158,11 @@ import (
 
 func main() {
 	fmt.Println("----------------Synchronous----------------")
-	u.SimulateApiCalls("https://www.google.com", 40)
+	u.SimulateApiCalls("https://www.google.com", 2)
 
 	fmt.Println("----------------Asynchronous----------------")
-	u.SimulateApiCallsWithGoroutines("https://www.google.com", 40)
+	u.SimulateApiCallsWithGoroutines("https://www.google.com", 10)
+
+	fmt.Println("----------------Server Http----------------")
+	u.SimulateServerHttp(10)
 }
