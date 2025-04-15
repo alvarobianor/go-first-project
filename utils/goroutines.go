@@ -30,8 +30,8 @@ func SimulateApiCallsWithGoroutines(url string, times int8) {
 	wg := sync.WaitGroup{}
 	wg.Add(int(times))
 
-	go func() {
-		for i := range times {
+	for i := range times {
+		go func() {
 			resp, error := http.Get(url)
 			if error != nil {
 				panic(error)
@@ -39,8 +39,8 @@ func SimulateApiCallsWithGoroutines(url string, times int8) {
 			fmt.Println("API called", i+1, "times")
 			defer resp.Body.Close()
 			defer wg.Done()
-		}
-	}()
+		}()
+	}
 
 	wg.Wait()
 
