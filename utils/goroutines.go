@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"math/rand"
 	"net/http"
 	"net/http/httptest"
 	"sync"
@@ -94,4 +95,38 @@ func SimulateServerHttp(times int8) {
 	wg.Wait()
 	elapsed := time.Since(start)
 	fmt.Printf("Tempo de execução: %s\n", elapsed)
+}
+
+func SimulateRace() {
+
+	// Create a channel to know when the race ends
+	finishLine := make(chan string)
+
+	startTime := time.Now()
+
+	// Create 3 race cars (goroutines)
+	go func() {
+		randTime := time.Duration(rand.Intn(10))
+		time.Sleep(randTime * time.Second) // Red car is slower
+		finishLine <- "Red Car"
+	}()
+
+	go func() {
+		randTime := time.Duration(rand.Intn(10))
+		time.Sleep(randTime * time.Second) // Blue car is faster
+		finishLine <- "Blue Car"
+	}()
+
+	go func() {
+		randTime := time.Duration(rand.Intn(10))
+		time.Sleep(randTime * time.Second) // Green car is the slowest
+		finishLine <- "Green Car"
+	}()
+
+	// Let's see who arrives first!
+	for i := 0; i < 3; i++ {
+		car := <-finishLine
+		fmt.Printf("%s arrived in %d place! In: %s\n", car, i+1, time.Since(startTime))
+	}
+
 }
